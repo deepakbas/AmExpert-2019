@@ -1,0 +1,142 @@
+About AmExpert 2019 – Machine Learning Hackathon
+Introduction:
+American Express and Analytics Vidhya presents “AmExpert 2019 – Machine Learning Hackathon”. An amazing opportunity to showcase your analytical abilities and talent.
+ 
+Get a taste of the kind of challenges we face here at American Express on day to day basis.
+ 
+Exciting prizes up for grabs! Best performers also get a chance to get interviewed by American Express for analytics roles!
+ 
+Don’t hold on to the buzzing ideas in your mind. Just wear your thinking hats and display the spectrum of your creativity!
+About the Company:
+American Express is a globally integrated payments company, providing customers with access to products, insights and experiences that enrich lives and build business success. It is
+•	One of the world's most recognizable brands
+•	An exceptionally strong heritage - over 160 years of leadership and reinvention
+•	World's largest card issuer by purchase volume
+•	Recognized as the most innovative company in our industry
+•	Cutting-edge Information Management and unique Closed-Loop network
+•	Customer loyalty experts with industry-leading rewards programs and platforms
+•	A rich history and a bright future
+Are you looking forward to work with American Express? Explore job opportunities on our job portal: https://jobs.americanexpress.com/india
+Learn more at americanexpress.com/in and connect with us on
+
+Who can Participate?
+•	Open for all data enthusiasts –Data Scientists, Analysts, Statisticians and Students
+Prizes:
+•	Rank 1 – Macbook Pro 15 inch i7
+•	Rank 2 – iPad Mini Wifi+cellular
+•	Rank 3 – iPad Mini Wifi
+•	Rank 4 – Fossil Smart Watch
+•	Rank 5 – Fitbit Versa Lite smartwatch
+ 
+In addition to the above, highest scorers get a chance to interview with American Express for analytical & machine learning roles.
+Rules:
+•	Entries submitted after the contest is closed, will not be considered
+•	You are expected to solve the problem on your own
+•	Multiple IDs of user leads to disqualification from contest
+•	Use of external data is not allowed
+•	Participant must update their profile details and upload their latest CV
+•	Decision on the winners and runners-up made by American Express will be final and binding
+•	Throughout the hackathon, you are expected to respect fellow hackers and act with high integrity
+•	Analytics Vidhya and American Express hold the right to disqualify any participant at any stage of competition if participant(s) are deemed to be acting fraudulently.
+•	Existing American Express employees are not allowed to participate in the competition
+•	Prizes will be shipped to an Indian Address only
+•	Only candidates residing in India can participate in this competition.
+Registration Fee
+Free
+________________________________________
+Problem Statement
+Predicting Coupon Redemption
+XYZ Credit Card company regularly helps it’s merchants understand their data better and take key business decisions accurately by providing machine learning and analytics consulting. ABC is an established Brick & Mortar retailer that frequently conducts marketing campaigns for its diverse product range. As a merchant of XYZ, they have sought XYZ to assist them in their discount marketing process using the power of machine learning. Can you wear the AmExpert hat and help out ABC?
+ 
+Discount marketing and coupon usage are very widely used promotional techniques to attract new customers and to retain & reinforce loyalty of existing customers. The measurement of a consumer’s propensity towards coupon usage and the prediction of the redemption behaviour are crucial parameters in assessing the effectiveness of a marketing campaign.
+ 
+ABC’s promotions are shared across various channels including email, notifications, etc. A number of these campaigns include coupon discounts that are offered for a specific product/range of products. The retailer would like the ability to predict whether customers redeem the coupons received across channels, which will enable the retailer’s marketing team to accurately design coupon construct, and develop more precise and targeted marketing strategies.
+ 
+The data available in this problem contains the following information, including the details of a sample of campaigns and coupons used in previous campaigns -
+•	User Demographic Details
+•	Campaign and coupon Details
+•	Product details
+•	Previous transactions
+Based on previous transaction & performance data from the last 18 campaigns, predict the probability for the next 10 campaigns in the test set for each coupon and customer combination, whether the customer will redeem the coupon or not?
+ 
+Dataset Description
+Here is the schema for the different data tables available. The detailed data dictionary is provided next.
+ 
+ 
+You are provided with the following files in train.zip:
+train.csv: Train data containing the coupons offered to the given customers under the 18 campaigns
+Variable	Definition
+id	Unique id for coupon customer impression
+campaign_id	Unique id for a discount campaign
+coupon_id	Unique id for a discount coupon
+customer_id	Unique id for a customer
+redemption_status	(target) (0 - Coupon not redeemed, 1 - Coupon redeemed)
+ 
+campaign_data.csv: Campaign information for each of the 28 campaigns
+Variable	Definition
+campaign_id	Unique id for a discount campaign
+campaign_type	Anonymised Campaign Type (X/Y)
+start_date	Campaign Start Date
+end_date	Campaign End Date
+ 
+coupon_item_mapping.csv: Mapping of coupon and items valid for discount under that coupon
+Variable	Definition
+coupon_id	Unique id for a discount coupon (no order)
+item_id	Unique id for items for which given coupon is valid (no order)
+ 
+customer_demographics.csv: Customer demographic information for some customers
+Variable	Definition
+customer_id	Unique id for a customer
+age_range	Age range of customer family in years
+marital_status	Married/Single
+rented	0 - not rented accommodation, 1 - rented accommodation
+family_size	Number of family members
+no_of_children	Number of children in the family
+income_bracket	Label Encoded Income Bracket (Higher income corresponds to higher number)
+ 
+customer_transaction_data.csv: Transaction data for all customers for duration of campaigns in the train data
+Variable	Definition
+date	Date of Transaction
+customer_id	Unique id for a customer
+item_id	Unique id for item
+quantity	quantity of item bought
+selling_price	Sales value of the transaction
+other_discount	Discount from other sources such as manufacturer coupon/loyalty card
+coupon_discount	Discount availed from retailer coupon
+ 
+item_data.csv: Item information for each item sold by the retailer
+Variable	Definition
+item_id	Unique id for item
+brand	Unique id for item brand
+brand_type	Brand Type (local/Established)
+category	Item Category
+ 
+test.csv: Contains the coupon customer combination for which redemption status is to be predicted
+Variable	Definition
+id	Unique id for coupon customer impression
+campaign_id	Unique id for a discount campaign
+coupon_id	Unique id for a discount coupon
+customer_id	Unique id for a customer
+ 
+*Campaign, coupon and customer data for test set is also contained in train.zip 
+sample_submission.csv: This file contains the format in which you have to submit your predictions.
+To summarise the entire process:
+•	Customers receive coupons under various campaigns and may choose to redeem it.
+•	They can redeem the given coupon for any valid product for that coupon as per coupon item mapping within the duration between campaign start date and end date
+•	Next, the customer will redeem the coupon for an item at the retailer store and that will reflect in the transaction table in the column coupon_discount.
+ 
+Evaluation Metric
+Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target.
+ 
+Public and Private Split
+Test data is further randomly divided into Public (40%) and Private data (60%)
+•	Your initial responses will be checked and scored on the Public data.
+•	The final rankings would be based on your private score which will be published once the competition is over.
+Hackathon Rules
+1.	Setting the final submission is mandatory. Without a final submission, the submission corresponding to best public score will be taken as final submission
+2.	Use of external datasets is not allowed
+3.	Use of id variable as a part of making predictions is not allowed
+4.	You can only make 10 submissions per day
+5.	The code file is mandatory while setting final submission. For GUI based tools, please upload a zip file of snapshots of steps taken by you, else upload code file.
+6.	The code file uploaded should be pertaining to your final submission.
+7.	No submission will be accepted after the contest deadline
