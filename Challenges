@@ -1,0 +1,10 @@
+Challenges:
+Highly imbalance dataset
+Multiple data sources, complexity in merging of datasources
+Missing data, Outliers
+Appropriate Cross Validation strategy as different campaign dates present in Train and Test
+Need for extensive feature engineering since we had many data sources
+Handling Data leakages to avoid overfit as the data source had historical transaction info
+Dataset involving Timeseries
+Private LB top score: 0.9380026012
+My score: 0.881635932582434
